@@ -1,7 +1,6 @@
 import React from 'react'
 import { weatherIcons } from '../CurrentWeather/CurrentWeather';
 export default function WeatherForecastItem({weather}) {
-    console.log(weather)
     return (
         <div className='flex-col  w-[200px] h-[100px] p-2 border-gray-200 shadow-md  rounded-md'>
             <p>
