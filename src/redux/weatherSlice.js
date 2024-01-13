@@ -44,7 +44,6 @@ export const getWeatherForecastData = createAsyncThunk(
   
         const res = await fetch(apiRequest);
         const resData = await res.json();
-        // console.log(resData.list); 
         return resData;
       } catch (err) {
         throw err;

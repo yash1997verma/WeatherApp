@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import TodayWeather from './components/CurrentWeather/CurrentWeather';
 import Search from './components/Search/Search';

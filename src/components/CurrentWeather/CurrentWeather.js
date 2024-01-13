@@ -1,6 +1,28 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentWeatherData } from '../../redux/weatherSlice';
+//to get diff icons
+export const weatherIcons = {
+  '01d': '/icons/sunny.png',
+  '01n': '/icons/clear-night.png',
+  '02d': '/icons/cloudy.png',
+  '02n': '/icons/night-clouds.png',
+  '03d': '/icons/cloudy.png',
+  '03n': '/icons/night-clouds.png',
+  '04d': '/icons/cloudy.png',
+  '04n': '/icons/night-clouds.png',
+  '09d': '/icons/rain.png',
+  '09n': '/icons/rain.png',
+  '10d': '/icons/rain.png',
+  '10n': '/icons/rain.png',
+  '11d': '/icons/thunderstorm.png',
+  '11n': '/icons/thunderstorm.png',
+  '13d': '/icons/snow.png',
+  '13n': '/icons/snow.png',
+  '50d': '/icons/mist.png',
+  '50n': '/icons/mist.png',
+};
+
 export default function CurrentWeather() {
   //get the currentCity
   const currentCity = useSelector((state)=> state.weather.currentCity);
@@ -23,27 +45,6 @@ export default function CurrentWeather() {
     return directions[index];
   };
 
-  //to get diff icons
-  const weatherIcons = {
-    '01d': '/icons/sunny.png',
-    '01n': '/icons/clear-night.png',
-    '02d': '/icons/cloudy.png',
-    '02n': '/icons/cloudy.png',
-    '03d': '/icons/cloudy.png',
-    '03n': '/icons/cloudy.png',
-    '04d': '/icons/cloudy.png',
-    '04n': '/icons/cloudy.png',
-    '09d': '/icons/rain.png',
-    '09n': '/icons/rain.png',
-    '10d': '/icons/rain.png',
-    '10n': '/icons/rain.png',
-    '11d': '/icons/thunderstorm.png',
-    '11n': '/icons/thunderstorm.png',
-    '13d': '/icons/snow.png',
-    '13n': '/icons/snow.png',
-    '50d': '/icons/mist.png',
-    '50n': '/icons/mist.png',
-  };
   
    
    
