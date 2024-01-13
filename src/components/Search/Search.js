@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useCallback  } from 'react'
 import { weatherActions } from '../../redux/weatherSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
+import DateComponent from '../DateComponent';
 export default function Search() {
   const dispatch = useDispatch();
   //search Value
@@ -28,7 +29,7 @@ export default function Search() {
   const getCities = useCallback(
     async (search) => {
       openSuggestion();
-      const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${search}`;
+      const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${search}&types=city`;
       const options = {
         method: 'GET',
         headers: {
@@ -36,16 +37,16 @@ export default function Search() {
           'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
         },
       };
-
+  
       try {
         const response = await fetch(url, options);
         const result = await response.json();
-        
-        //if the entered city is not valid
-        if (result.data.length  === 0) {
+  
+        // If the entered city is not valid
+        if (result.data.length === 0) {
           toast.error('No cities found');
-        } 
-
+        }
+  
         setSearchSuggestions(result.data || []);
       } catch (error) {
         console.error(error);
@@ -53,6 +54,7 @@ export default function Search() {
     },
     []
   );
+  
 
   // get search suggestion for cities
   useEffect(() => {
@@ -97,8 +99,12 @@ export default function Search() {
   //select a city from suggestion
   const selectCity =(city)=>{
     closeSuggestions();
-    console.log(city)
     dispatch(weatherActions.setCurrentCity(city));
+  }
+
+  //change temp unit
+  const changeTemperatureUnit =(unit)=>{
+    dispatch(weatherActions.setTemperatureUnit(unit))
   }
 
   return (
@@ -132,16 +138,22 @@ export default function Search() {
             
 
 
-      {/* Current city and data */}
-      <div className='absolute top-[122px] flex gap-3'>
-       <span className='flex font-Kanit gap-3'>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+      {/* Current city, date,time and temperature unit */}
+      <div className='absolute top-[130px] flex  gap-3 text-slate-600'>
+       <span className='flex font-Kanit items-center gap-1  italic'>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
         </svg>
-        {currentCity.city}
+        <span className='text-sm'>{currentCity.city}</span>
        </span>
-       <p>Time & date</p>
+
+       <span className='text-sm italic font-bold mb-1'><DateComponent /></span>
+
+       <select onChange={(e) => changeTemperatureUnit(e.target.value)} className='font-bold text-sm italic mb-1' name="" id="">
+        <option value="Celsius">Celsius</option>
+        <option value={"Fahrenheit"} >Fahrenheit </option>
+       </select>
 
       </div>
     
