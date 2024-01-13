@@ -52,8 +52,10 @@ A simple weather application that allows users to get the current weather and a 
    
 
    -*Full Screen* 
+   
    ![Screenshot 1](./public/screenshots/desktop.JPG)
      
 
    -*Mobile*
+
    ![Screenshot 2](./public/screenshots/mobile.JPG)
