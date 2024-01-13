@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-
+import TodayWeather from './components/CurrentWeather/CurrentWeather';
+import Search from './components/Search/Search';
+// redux store
+import store from './redux/store';
+import { Provider } from 'react-redux';
+//hot toast
+import {Toaster} from 'react-hot-toast';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store} >
+      <Toaster />
+      <div className="relative flex flex-col justify-center items-center">
+        <Search />
+        <TodayWeather />
+      </div>
+    </Provider>
   );
 }
 
