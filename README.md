@@ -38,8 +38,8 @@ A simple weather application that allows users to get the current weather and a 
 
 
 3. Run the application: 
-```bash
-npm start
+    ```bash
+    npm start
 
 # Usage
 -   Enter a city name in the search bar to get   current weather and forecast information.
