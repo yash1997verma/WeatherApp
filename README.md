@@ -1,7 +1,7 @@
 # Live Link:
 https://weatherapp-aor0.onrender.com/
 
-# Inro
+# Intro
 The app was built as an assignment for MirrAR.
 
 # Weather App
@@ -52,7 +52,7 @@ A simple weather application that allows users to get the current weather and a 
    
 
    -*Full Screen* 
-   
+
    ![Screenshot 1](./public/screenshots/desktop.JPG)
      
 
