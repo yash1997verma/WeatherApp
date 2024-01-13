@@ -27,18 +27,21 @@ A simple weather application that allows users to get the current weather and a 
    git clone https://github.com/yash1997verma/WeatherApp
    weather-app.git
 2. Configure API Keys:
+    Obtain API keys from OpenWeather and GEOdb.
 
-Obtain API keys from OpenWeather and GEOdb.
-
-Create a .env file in the project root and add the API keys:
-
-REACT_APP_WEATHER_KEY=your_openweather_api_key
-REACT_APP_GEODB_CITIES=your_geodb_api_key
+    Create a .env file in the project root and add the API keys:
+    ```bash
+    REACT_APP_WEATHER_KEY=your_openweather_api_key
+    REACT_APP_GEODB_CITIES=your_geodb_api_key
 
 
-3. Run the application: npm start
 
-#Usage
+
+3. Run the application: 
+```bash
+npm start
+
+# Usage
 -   Enter a city name in the search bar to get   current weather and forecast information.
 -   Select the preferred temperature unit (Celsius or Fahrenheit).
 -   Explore the weather details for the chosen location.
