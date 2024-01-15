@@ -12,6 +12,7 @@ A simple weather application that allows users to get the current weather and a 
 - Get current weather information, including temperature, humidity, wind speed, and more.
 - View a 5-day weather forecast with details like temperature, weather conditions, and humidity.
 - Search for cities to get weather information.
+- Typing a city which does not exist, will not give any suggestion and show a error notification.
 
 ## Technologies Used
 - React: A JavaScript library for building user interfaces.
