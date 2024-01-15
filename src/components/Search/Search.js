@@ -23,7 +23,8 @@ export default function Search() {
 
 
 
-  
+  /*Note: The GEOdb api, which I am using for citites suggestion, allows only 1 req per sec
+  on it's free plan, hence used debouncing and useCallback for implementation.*/
 
   // debounced getCities function
   const getCities = useCallback(

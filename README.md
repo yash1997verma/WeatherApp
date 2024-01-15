@@ -6,6 +6,7 @@ The app was built as an assignment for MirrAR.
 
 # Weather App
 A simple weather application that allows users to get the current weather and a 5-day forecast for a chosen location. The application uses data from the OpenWeather API for weather information and the GEOdb API for city suggestions.
+*Note: The GEOdb api on it's free plan allows only 1 req per sec, hence used debouncing and useCallback for implementation.* 
 
 ## Features
 - Get current weather information, including temperature, humidity, wind speed, and more.
